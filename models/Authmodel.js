@@ -12,7 +12,7 @@ const Login = {
           throw err;
         }
         if (result.length > 0) {
-          const token = jwt.sign({ Emailid: userdata.Email }, 'your_secret_key', {
+          const token = jwt.sign({ Emailid: userdata.Email }, 'AUTH_001', {
             expiresIn: '1h',
           });
           const reftoken = jwt.sign({ Emailid: userdata.Email }, 'ref_secret_key', {
@@ -31,7 +31,7 @@ const Login = {
         if (err) {
           response({ message: 'Invalid access token' });
         } else {
-            const token = jwt.sign({ Emailid: body.Email }, 'your_secret_key', {
+            const token = jwt.sign({ Emailid: body.Email }, 'AUTH_001', {
                 expiresIn: '1h',
               });
           const reftoken = jwt.sign({ Emailid: decoded.Emailid }, 'ref_secret_key', {

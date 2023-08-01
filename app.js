@@ -17,4 +17,4 @@ dbcon.getConnection((err, res) => {
     else console.log("db connection success ");
 });
 
-app.listen(3002);
+app.listen(3001);
